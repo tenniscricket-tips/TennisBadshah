@@ -1,0 +1,209 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Ishan Agency </title>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+  :root {
+    --white: #ffffff;
+    --accent: #ffd700;
+    --btn-bg: #0b1b4a;
+    --btn-border: #ffffff;
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+    padding:0;
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+  }
+  body{
+    background: url('Rinku.JPG') center/cover no-repeat fixed;
+    position:relative;
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .bg-overlay{
+    position:fixed; inset:0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(4px);
+    z-index:0;
+  }
+
+  .wrap{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+    box-sizing:border-box;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 520px;
+    text-align:center;
+    padding: 18px 20px;
+    color: #fff;
+  }
+
+  .title {
+    font-size: 36px;
+    font-weight: 800;
+    margin: 6px 0;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  }
+
+  .subtitle {
+    font-size: 16px;
+    color: rgba(255,255,255,0.9);
+    margin-bottom:18px;
+  }
+
+  /* circular profile */
+  .profile {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 18px auto 12px;
+    border: 4px solid rgba(255,255,255,0.2);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+    background: center/cover no-repeat;
+  }
+
+  .joining-line {
+    margin-top: 10px;
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+  }
+  .count {
+    font-size: 52px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-top: 6px;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  }
+
+  .userline {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+  }
+
+  .request {
+    margin-top: 8px;
+    color: rgba(255,255,255,0.85);
+    font-size: 14px;
+  }
+
+  /* animated button */
+  .btn-join {
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    margin: 24px auto 10px;
+    background: var(--btn-bg);
+    color: var(--white);
+    padding: 16px 28px;
+    border-radius: 44px;
+    font-size: 20px;
+    font-weight: 800;
+    text-decoration: none;
+    border: 3px solid var(--btn-border);
+    box-shadow: 0 10px 30px rgba(3,10,40,0.6);
+    animation: popup 2s infinite ease-in-out, pulseColor 3s infinite alternate;
+  }
+
+  @keyframes popup {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  @keyframes pulseColor {
+    0% { background-color: #0b1b4a; }
+    50% { background-color: #152b7b; }
+    100% { background-color: #0b1b4a; }
+  }
+
+  .btn-join:hover {
+    transform: scale(1.1);
+    box-shadow: 0 14px 40px rgba(3,10,40,0.9);
+  }
+
+  .footer-credit {
+    margin-top: 18px;
+    color: rgba(255,215,0,0.95);
+    font-weight:700;
+    font-size: 14px;
+  }
+  .footer-credit a { color: rgba(255,215,0,0.95); text-decoration:none; }
+
+  @media (max-width:480px){
+    .title { font-size: 28px; }
+    .profile { width:110px; height:110px; }
+    .count { font-size:42px; }
+    .btn-join { font-size:18px; padding:14px 22px; border-radius:36px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-overlay"></div>
+
+<div class="wrap">
+  <div class="card">
+    <div class="title">TENNIS BADSHAH ™
+</div>
+    <div class="subtitle">India's No.1 Trending Tipper 💯</div>
+
+    <div id="profile" class="profile" style="background-image: url('Rinku.JPG');"></div>
+
+    <div class="joining-line">FREE JOINING ENDS IN...</div>
+    <div class="count" id="countNum">8</div>
+
+    <div class="userline">@VIPTENNISBADSHAH</div>
+    <div class="request">Request access — approvals are quick ⬇</div>
+
+    <a id="joinBtn" class="btn-join" href="https://t.me/+3ADPKUNzgdQ2NDk1" target="_blank">
+      Join Now Telegram Channel
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <path d="M21 4L3 10.5L10 13.5L13 21L15 13.5L21 4Z" fill="#fff"/>
+      </svg>
+    </a>
+
+    <div class="footer-credit"><a href="https://t.me/ishanthakurtipper" target="_blank">Ishan Agency
+  </div>
+</div>
+
+<script>
+  (function(){
+    let n = 8;
+    const el = document.getElementById('countNum');
+    setInterval(()=>{
+      n--;
+      if(n <= 0) n = 8;
+      el.textContent = n;
+    },1000);
+  })();
+</script>
+
+</body>
+</html> 
